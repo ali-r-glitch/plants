@@ -14,7 +14,7 @@ public class clicks : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPo
     paneldisplay pnldis;
     stats sta;
 
-    private GridManager gridManager;
+    private gridmove gridManager;
 
     private void Start()
     {
@@ -26,7 +26,7 @@ public class clicks : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPo
         sta = this.gameObject.GetComponent<stats>();
 
         // Find and assign the GridManager
-        gridManager = FindObjectOfType<GridManager>();
+        gridManager = FindObjectOfType<gridmove>();
         if (gridManager == null)
         {
             Debug.LogError("GridManager not found in the scene.");
@@ -61,7 +61,9 @@ public class clicks : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPo
 
         if (!follow && gridManager != null)
         {
-            transform.position = gridManager.GetNearestPointOnGrid(transform.position);
+            Vector3 newPosition = gridManager.GetNearestPointOnGrid(transform.position);
+            newPosition.y = transform.position.y; // Keep the original Y position
+            transform.position = newPosition;
         }
     }
 

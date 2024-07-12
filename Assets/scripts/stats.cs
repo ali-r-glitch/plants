@@ -7,6 +7,7 @@ public class stats : MonoBehaviour
 
     public int maxhealth,health, damage, picturenum;
     public string effect,name;
+    public float height;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +17,7 @@ public class stats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.position = new Vector3(transform.position.x, height, transform.position.z);
     }
     public void damagetake(int damage)
     {
