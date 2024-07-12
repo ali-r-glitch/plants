@@ -38,10 +38,10 @@ public class game : MonoBehaviour
         
         ego -= 1 * multiplier;
 
-
+        /*
         slhealth.value = health;
         slsoil.value = soil;
         sltemperatur.value = temperature;
-        slego.value = ego;
+        slego.value = ego;*/
     }
 }
