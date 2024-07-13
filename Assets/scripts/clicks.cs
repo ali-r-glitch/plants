@@ -10,7 +10,7 @@ public class clicks : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPo
     private Renderer objectRenderer;
     private Material originalMaterial;
     bool follow = false;
-    bool canBePicked = true; // New boolean flag to control picking
+    public bool canBePicked = true; // New boolean flag to control picking
     GameObject gamemanager;
     GameObject paneldis;
     paneldisplay pnldis;

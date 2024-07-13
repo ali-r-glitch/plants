@@ -3,8 +3,8 @@ using UnityEngine;
 public class gridmove : MonoBehaviour
 {
     public float cellSize = 1.0f;
-    public int gridWidth = 20;
-    public int gridHeight = 20;
+    public int gridWidth = 3;
+    public int gridHeight = 3;
     public Material lineMaterial;
 
     private LineRenderer[] lineRenderers;
