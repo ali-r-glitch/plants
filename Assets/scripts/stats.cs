@@ -5,7 +5,7 @@ using UnityEngine;
 public class stats : MonoBehaviour
 {
 
-    public int maxhealth,health, damage, picturenum;
+  public  float  maxhealth,health, damage, picturenum;
     public string effect,name;
     public float height;
     // Start is called before the first frame update

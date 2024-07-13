@@ -25,7 +25,7 @@ public class game : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(ego<=0f)
+        if(ego>=0f)
         {
          
             ego -= 0.1f * multiplier;
@@ -33,7 +33,7 @@ public class game : MonoBehaviour
         {
             health -= 0.1f * multiplier;
         }
-        if (soil <= 0f)
+        if (soil >= 0f)
         {
             soil -= 0.1f * multiplier;
         }

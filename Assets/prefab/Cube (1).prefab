@@ -98,7 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b83229908d8be7346b28e1b9726a9418, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  redmat: {fileID: 0}
+  redmat: {fileID: 2100000, guid: 730506007b0aaeb49a7adacfd9439058, type: 2}
+  canBePicked: 1
 --- !u!114 &6037070955600058670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,6 +118,7 @@ MonoBehaviour:
   picturenum: 3
   effect: 222
   name: ushi
+  height: 0
 --- !u!65 &8129466751592187558
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ using TMPro;
 public class paneldisplay : MonoBehaviour
 {
     public TextMeshProUGUI name, damage, health, effect;
-    private int h,d,p;
+    float  h,d,p;
     private string e,n;
    public bool display=false;
     // Start is called before the first frame update
@@ -29,7 +29,7 @@ public class paneldisplay : MonoBehaviour
        
        
     }
-    public void setdisplay (int health, int damage, int picturenum, string effect,string name )
+    public void setdisplay (float health, float damage, float picturenum, string effect,string name )
       {
         h = health;
         d = damage;

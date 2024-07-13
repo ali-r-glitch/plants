@@ -6,11 +6,13 @@ public class redclover : MonoBehaviour
 {
     // Start is called before the first frame update
    
-    public float health = 20;
-    public float soil = 30;
+    
+    
+    public float heat = 20;
     game gam;
     clicks cl;
     bool onawake = true;
+    stats stat;
 
 
     // Start is called before the first frame update
@@ -19,6 +21,7 @@ public class redclover : MonoBehaviour
 
         GameObject statManagerObject = GameObject.Find("Gamemanager");
         gam = statManagerObject.GetComponent<game>();
+        stat = this.gameObject.GetComponent<stats>();
         cl = this.gameObject.GetComponent<clicks>();
 
     }
@@ -27,16 +30,17 @@ public class redclover : MonoBehaviour
         if(onawake && !cl.canBePicked)
         {
             heatadd();
+            onawake = false;
         }
         if (gam.temperature <= 30f)
         {
-            health -= 0.1f * gam.multiplier;
+            stat.health -= 0.1f * gam.multiplier;
         }
     }
 
     public void heatadd()
     {
-        gam.soil += health;
+        gam.soil += heat;
     }
 
 }
