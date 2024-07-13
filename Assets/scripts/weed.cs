@@ -29,7 +29,7 @@ public class weed : MonoBehaviour
             heatadd();
             onawake = false;
         }
-        if (gam.soil >= 70f)
+        if (onawake && gam.soil >= 70f)
         {
             stat.health -= 0.1f * gam.multiplier;
         }

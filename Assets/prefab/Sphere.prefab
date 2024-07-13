@@ -117,7 +117,7 @@ MonoBehaviour:
   health: 5
   damage: 5
   picturenum: 5
-  effect: Increase soil fertility
+  effect: 'Increase soil fertility. Dies if tem is below 30 '
   name: Soily
   height: 0
 --- !u!114 &4007681613721413549

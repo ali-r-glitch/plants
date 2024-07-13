@@ -117,8 +117,8 @@ MonoBehaviour:
   health: 5
   damage: 5
   picturenum: 5
-  effect: Increase soil fertility
-  name: Soily
+  effect: 'decrease soil fertility. dies if temp is above 70 '
+  name: the cooler soily
   height: 0
 --- !u!114 &7425879097481054302
 MonoBehaviour:

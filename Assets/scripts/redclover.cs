@@ -32,7 +32,7 @@ public class redclover : MonoBehaviour
             heatadd();
             onawake = false;
         }
-        if (gam.temperature <= 30f)
+        if (onawake && gam.temperature <= 30f)
         {
             stat.health -= 0.1f * gam.multiplier;
         }

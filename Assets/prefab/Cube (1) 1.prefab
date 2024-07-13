@@ -139,7 +139,7 @@ MonoBehaviour:
   health: 5
   damage: 0
   picturenum: 5
-  effect: 'makes temp higher '
+  effect: 'makes temp higher. Dies if the soil is below 30 '
   name: warm flower
   height: 0
 --- !u!114 &6279851834849971328

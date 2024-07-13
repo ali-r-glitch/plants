@@ -112,12 +112,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09663446612ef6944b950c21a16d4882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxhealth: 1001
-  health: 1001
+  maxhealth: 100
+  health: 100
   damage: 3
   picturenum: 3
-  effect: 222
-  name: ushi
+  effect: 'Is you '
+  name: You
   height: 0
 --- !u!65 &8129466751592187558
 BoxCollider:

@@ -4969,8 +4969,8 @@ MonoBehaviour:
   health: 5
   damage: 0
   picturenum: 5
-  effect: 'makes temp cold '
-  name: cl flower
+  effect: makes temp cold . dies if the soil is above 70
+  name: cold flower
   height: 0
 --- !u!114 &3146765135210072666
 MonoBehaviour:
