@@ -4,11 +4,13 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class clicks : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
+
 {
     public Material redmat;
     private Renderer objectRenderer;
     private Material originalMaterial;
     bool follow = false;
+    bool canBePicked = true; // New boolean flag to control picking
     GameObject gamemanager;
     GameObject paneldis;
     paneldisplay pnldis;
@@ -35,7 +37,7 @@ public class clicks : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPo
 
     private void FixedUpdate()
     {
-        if (follow)
+        if (follow && canBePicked)
         {
             Vector3 mousePosition = Input.mousePosition;
             mousePosition.z = Camera.main.WorldToScreenPoint(transform.position).z;
@@ -46,39 +48,53 @@ public class clicks : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPo
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        Debug.Log(" down");
+        if (canBePicked)
+        {
+            Debug.Log(" down");
+        }
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        Debug.Log("up ");
+        if (canBePicked)
+        {
+            Debug.Log("up ");
+        }
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log(" click ");
-        follow = !follow;
-
-        if (!follow && gridManager != null)
+        if (canBePicked)
         {
-            Vector3 newPosition = gridManager.GetNearestPointOnGrid(transform.position);
-            newPosition.y = transform.position.y; // Keep the original Y position
-            transform.position = newPosition;
+            Debug.Log(" click ");
+            follow = !follow;
+
+            if (!follow && gridManager != null)
+            {
+                transform.position = gridManager.GetNearestPointOnGrid(transform.position);
+                canBePicked = false; // Make the object unpickable after snapping to the grid
+            }
         }
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        Debug.Log(" exit ");
-        objectRenderer.material = originalMaterial;
-        pnldis.display = false;
+       
+        
+            Debug.Log(" exit ");
+            objectRenderer.material = originalMaterial;
+            pnldis.display = false;
+        
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Debug.Log(" enter");
-        objectRenderer.material = redmat;
-        pnldis.display = true;
-        pnldis.setdisplay(sta.health, sta.damage, sta.picturenum, sta.effect, sta.name);
+      
+        
+            Debug.Log(" enter");
+            objectRenderer.material = redmat;
+            pnldis.display = true;
+            pnldis.setdisplay(sta.health, sta.damage, sta.picturenum, sta.effect, sta.name);
+        
     }
 }

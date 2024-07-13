@@ -25,23 +25,37 @@ public class game : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        health -= 1* multiplier;
-        soil -= 1 * multiplier;
-
-        if(temperature<=50)
+        if(ego<=0f)
         {
-            temperature -= 1 * multiplier;
+         
+            ego -= 0.1f * multiplier;
         }else
         {
-            temperature += 1 * multiplier;
+            health -= 0.1f * multiplier;
+        }
+        if (soil <= 0f)
+        {
+            soil -= 0.1f * multiplier;
+        }
+    else
+        {
+            health -= 0.1f * multiplier;
+        }
+
+if (temperature<=50)
+        {
+            temperature -= 0.1f * multiplier;
+        }else
+        {
+            temperature += 0.1f * multiplier;
         }
         
-        ego -= 1 * multiplier;
+       
 
-        /*
+        
         slhealth.value = health;
         slsoil.value = soil;
         sltemperatur.value = temperature;
-        slego.value = ego;*/
+        slego.value = ego;
     }
 }
